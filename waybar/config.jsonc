@@ -1,0 +1,68 @@
+{
+    // General Settings
+
+    // Position
+    "layer": "top",
+    "position": "top",
+    
+    // padding & size
+    "margin-top": 0,
+    "margin-bottom": 0,
+    "height": 30,
+
+    // Modules
+    "include": [
+        "/home/mao/.config/waybar/Modules.jsonc" 
+    ],
+
+    // Left Modules
+    "modules-left":[
+        //"custom/left_end",
+        "custom/padd",
+        "custom/power",
+        "custom/padd",
+        "custom/updates",
+        "custom/right_end",
+
+        "custom/left_end",
+        "custom/spotify",
+        "custom/padd",
+        "cava",
+        "custom/right_end"        
+    ],
+
+    // Center Modules
+    "modules-center":[
+        "custom/left_end",
+        "hyprland/workspaces",
+        "hyprland/window",
+        "custom/right_end"
+    ],
+
+    // Right Modules
+    "modules-right":[
+        "custom/left_end",
+        "cpu",
+        "custom/padd",
+        "memory",
+        //"custom/padd",
+        //"battery",
+        "custom/padd",
+        //"disk",
+
+        "backlight",
+        "custom/padd",
+        "pulseaudio",
+        "custom/padd",
+        "pulseaudio#microphone",
+        "custom/padd",
+        "bluetooth",
+        "custom/padd",
+        "network",
+        "custom/padd",
+        //"custom/keybindhint",
+        "clock",
+        "custom/padd"
+        //"custom/right_end"
+    ]
+}

@@ -1,0 +1,11 @@
+[Unit]
+Description=Cloudflare Tunnel
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/cloudflared tunnel run n8n-tunnel
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
+

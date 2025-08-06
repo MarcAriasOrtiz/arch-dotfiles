@@ -1,0 +1,35 @@
+configuration {
+  font: "Inconsolata Nerd Font Mono Regular 11";
+  show-icons: false;
+  location: 0;
+  fullscreen: false;
+}
+
+//@theme "/home/mao/.config/rofi/change_wallpapper/wallust/colors-rofi.rasi"
+
+* {
+  bg:rgba(0, 0, 0, 0.78);
+  fg:rgba(247, 247, 247, 1);
+}
+
+
+
+window {
+  background-color: @bg;
+  border: 0;
+  padding: 20px;
+  border-radius: 12px;
+  width: 35%; 
+}
+
+message {
+  padding: 10px;
+  background-color: transparent;
+  text-color: @fg;
+}
+
+textbox {
+  padding: 10px;
+  background-color: transparent;
+  text-color: @fg;
+}

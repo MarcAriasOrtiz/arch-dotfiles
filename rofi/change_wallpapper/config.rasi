@@ -1,0 +1,10 @@
+
+/* ---- Global Configuration Fonts ---- */
+@import "~/.config/rofi/change_wallpapper/rofi-fonts.rasi"
+
+
+/* You can manually change here or you can use rofi theme selector SUPER SHIFT E */
+
+@theme "~/.config/rofi/change_wallpapper/wallpapper_selector/theme-1.rasi"
+
+

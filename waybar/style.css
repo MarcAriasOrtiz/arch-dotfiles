@@ -1,0 +1,153 @@
+* {
+    border: none;
+    border-radius: 0px;
+    font-family: "JetBrainsMono Nerd Font", "FontAwesome", "Nerd Fonts";
+    font-weight: bold;
+    font-size: 14px;
+    min-height: 10px;
+    margin-top: 2px;
+}
+
+@import "theme.css";
+
+window#waybar {
+    background: transparent;
+}
+
+tooltip {
+    background: @bar-elements-background;
+    color: @bar-elements;
+    border-radius: 2px;
+    border-width: 0px;
+}
+
+#workspaces button {
+    box-shadow: none;
+	text-shadow: none;
+    padding: 0px;
+    border-radius: 8px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-left: 0px;
+    padding-left: 2px;
+    padding-right: 2px;
+    margin-right: 0px;
+    color: @bar-elements;
+    animation: ws_normal 20s ease-in-out 1;
+}
+
+#workspaces button.active {
+    background: @bar-elements;
+    color: @bar-elements-background;
+    margin-left: 2px;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-right: 2px;
+    animation: ws_active 20s ease-in-out 1;
+    transition: all 0.4s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+#workspaces button:hover {
+    background: @bar-elements;
+    color: @bar-elements-background;
+    animation: ws_hover 20s ease-in-out 1;
+    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+#taskbar button {
+    box-shadow: none;
+	text-shadow: none;
+    padding: 0px;
+    border-radius: 6px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-left: 0px;
+    padding-left: 2px;
+    padding-right: 2px;
+    margin-right: 0px;
+    color: @wb-color;
+    animation: tb_normal 20s ease-in-out 1;
+}
+
+#taskbar button.active {
+    background: @bar-elements;
+    color: @wb-act-color;
+    margin-left: 2px;
+    padding-left: 11px;
+    padding-right: 11px;
+    margin-right: 2px;
+    animation: tb_active 20s ease-in-out 1;
+    transition: all 0.4s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+#taskbar button:hover {
+    background: @bar-elements;
+    color: @wb-hvr-color;
+    animation: tb_hover 20s ease-in-out 1;
+    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+#tray menu * {
+    min-height: 16px
+}
+
+#tray menu separator {
+    min-height: 10px
+}
+
+
+#custom-power,
+#custom-keybindhint,
+#custom-updates,
+#custom-spotify,
+#backlight,
+#network,
+#bluetooth,
+#pulseaudio,
+#cpu,
+#load,
+#memory,
+#battery,
+#disk,
+#gamemode,
+#clock,
+#cava,
+#workspaces,
+#window,
+
+#taskbar {
+    padding: 0px;
+    background: @bar-elements-background;
+    color: @bar-elements;
+}
+
+#custom-left_end {
+    border-radius: 8px 0px 0px 8px;   /* redondeo a la izquierda */
+    background: @bar-elements-background;
+    color: @bar-elements;
+    margin-left: 6px;
+    padding-left: 0px;
+    transition: all 0.3s ease-in-out;
+}
+
+#custom-right_end {
+    border-radius: 0px 8px 8px 0px;   /* redondeo a la derecha */
+    background: @bar-elements-background;
+    color: @bar-elements;
+    margin-right: 8px;
+    padding-right: 0px;
+    transition: all 0.3s ease-in-out;
+}
+
+#custom-padd {
+    background: @bar-elements-background;
+    color: @bar-elements;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Opcional: al pasar el mouse */
+/*#custom-left_end:hover,
+#custom-right_end:hover {
+    background: @bar-elements;
+    color: @bar-elements-background;
+}*/

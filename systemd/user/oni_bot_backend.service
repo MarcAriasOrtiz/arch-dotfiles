@@ -1,0 +1,12 @@
+[Unit]
+Description=Ejecuta el backend de oni-bot
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/mao/projects/chat_backend
+ExecStart=/home/mao/projects/chat_backend/exec.sh
+Restart=no 
+
+[Install]
+WantedBy=default.target 

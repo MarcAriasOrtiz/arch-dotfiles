@@ -1,0 +1,15 @@
+/**
+ * Colors
+ **/
+
+@import "/home/mao/.config/rofi/wallust/colors-rofi.rasi"
+
+
+* {
+    /*background:     @background-translucent;*/
+    background-alt: @color1-translucent;
+    /*foreground:     @foreground;*/
+    selected:       @color12;
+    active:         @color11;
+    urgent:         red;
+}

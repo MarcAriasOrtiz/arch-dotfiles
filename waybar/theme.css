@@ -1,0 +1,32 @@
+@import "/home/mao/.config/waybar/wallust/colors-waybar.css";
+
+@define-color bar-background @background-alt;
+@define-color bar-elements-background @color0;
+@define-color bar-elements @color3; 
+
+/*
+foo {
+    a: rgba(0, 0, 0, 0.8);
+    b: rgba(142, 7, 7, 0.7);
+    c: rgba(0, 0, 0, 1);
+    d: rgba(0, 0, 0, 0.5)
+}
+foo {
+colors: #40403F;
+colors: #13140F;
+colors: #3F1D16;
+colors: #AA001C; 
+colors: #8C4D3A;
+colors: #8C4D3A;
+colors: #878484;
+colors: #D1CFCF;
+colors: #929191;
+colors: #191A14;
+colors: #54271D;
+colors: #E30026; 
+colors: #BB674E;
+colors: #BB674E;
+colors: #B4B0B0;
+colors: #D1CFCF;
+}
+*/

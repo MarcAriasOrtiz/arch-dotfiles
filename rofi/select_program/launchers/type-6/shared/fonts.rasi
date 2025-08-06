@@ -1,0 +1,22 @@
+/**
+ *
+ * Author : Aditya Shakya (adi1090x)
+ * Github : @adi1090x
+ * 
+ * Fonts
+ *
+ **/
+/*
+* {
+    font: "JetBrains Mono Nerd Font 10";
+}
+*/
+configuration {
+  font: "JetBrainsMono Nerd Font SemiBold 13";
+}
+
+
+/*****-- Elements Font Size -----*****/
+element-text {
+  font: "JetBrainsMono Nerd Font SemiBold 11";
+}
