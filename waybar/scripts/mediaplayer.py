@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 import json
 import subprocess
-import os
 
 OFFSET_CACHE = "/tmp/spotify_waybar_offset"
-WINDOW = 30     # Longitud de ventana visible (ajústalo a tu gusto)
-SCROLL_STEP = 1 # Avance de cada tick
+WINDOW = 30      # Longitud de ventana visible (ajústalo a tu gusto)
+SCROLL_STEP = 1  # Avance de cada tick
+
 
 def get_offset():
     try:
@@ -14,9 +14,11 @@ def get_offset():
     except Exception:
         return 0
 
+
 def set_offset(n):
     with open(OFFSET_CACHE, "w") as f:
         f.write(str(n))
+
 
 def get_spotify_info():
     try:
@@ -58,5 +60,6 @@ def get_spotify_info():
             "tooltip": "Spotify: No music",
             "class": "stopped",
         }
+
 
 print(json.dumps(get_spotify_info()))
