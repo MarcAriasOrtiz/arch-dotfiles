@@ -1,19 +1,23 @@
 #!/bin/bash
 
-sleep 0.5  # Espera para que DRM esté listo
+# Monitors
+LAPTOP_MONITOR="eDP-1"
+EXTERNAL_MONITOR="HDMI-A-1"
 
-HDMI_STATUS="/sys/class/drm/card1-HDMI-A-1/status"
-if [ -f "$HDMI_STATUS" ] && grep -q connected "$HDMI_STATUS"; then
+# Screen res
+DESIRED_RESOLUTION="1920x1080@60"
 
-    # Si HDMI está conectado, usar solo HDMI
-    hyprctl keyword monitor "HDMI-A-1,1920x1080@60,0x0,1"
-    hyprctl keyword monitor "eDP-1,disable"
+sleep 5
+
+if [[ "$(cat /sys/class/drm/*$EXTERNAL_MONITOR*/status 2>/dev/null)" == "connected" ]]; then
+    
+    hyprctl keyword monitor "$EXTERNAL_MONITOR,$DESIRED_RESOLUTION,0x0,1"
+    
+    hyprctl keyword monitor "$LAPTOP_MONITOR,disable"
 
 else
 
-    # Si no hay HDMI, usar pantalla del portátil
-    hyprctl keyword monitor "eDP-1,preferred,auto,1"
-    hyprctl keyword monitor "HDMI-A-1,disable"
+    hyprctl keyword monitor "$LAPTOP_MONITOR,preferred,auto,1"
+    
+    hyprctl keyword monitor "$EXTERNAL_MONITOR,disable"
 fi
-
-
