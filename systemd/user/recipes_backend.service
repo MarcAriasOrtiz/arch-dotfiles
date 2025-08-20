@@ -1,0 +1,12 @@
+[Unit]
+Description=Ejecuta el backend del insertador de datos al SQL para los tickets
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/mao/projects/recipes_backend
+ExecStart=/home/mao/projects/recipes_backend/exec.sh
+Restart=no 
+
+[Install]
+WantedBy=default.target 
