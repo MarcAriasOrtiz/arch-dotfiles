@@ -46,11 +46,10 @@
         "custom/padd",
         "memory",
         //"custom/padd",
-        //"battery",
+        //"battery", // Solo protatil
         "custom/padd",
         //"disk",
-
-        "backlight",
+        //"backlight", // Solo protatil screen
         "custom/padd",
         "pulseaudio",
         "custom/padd",
