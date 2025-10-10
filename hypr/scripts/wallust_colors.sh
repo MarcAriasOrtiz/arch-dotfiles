@@ -1,41 +1,71 @@
 #!/bin/bash
+# ─────────────────────────────────────────────────────────────
+# Script: wallust_colors.sh
+# Autor: Mao 🐧
+# Descripción: Genera paleta de colores con Wallust basada en
+#              el wallpaper actual aplicado por Hyprland.
+# ─────────────────────────────────────────────────────────────
 
-# Wallust Colors for current wallpaper
+# 📂 Configuración de rutas
+SCRIPTSDIR="$HOME/.config/hypr/scripts"
+ROFI_DIR="$HOME/.config/rofi/change_wallpapper"
+WALLPAPER_LINK="$ROFI_DIR/.current_wallpaper"
+WALLPAPER_PATH_FILE="$SCRIPTSDIR/.current_wallpaper_path"
 
-# Define the path to the swww cache directory
-cache_dir="$HOME/.cache/swww/"
+# 📢 Logs (opcional)
+log() { echo "[Wallust] $1"; }
 
-# Get a list of monitor outputs
-monitor_outputs=($(ls "$cache_dir"))
+# ─────────────────────────────────────────────────────────────
+# 🧩 Comprobaciones iniciales
+# ─────────────────────────────────────────────────────────────
 
-# Initialize a flag to determine if the ln command was executed
-ln_success=false
-
-# Get current focused monitor
-current_monitor=$(hyprctl monitors | awk '/^Monitor/{name=$2} /focused: yes/{print name}')
-echo $current_monitor
-# Construct the full path to the cache file
-cache_file="$cache_dir$current_monitor"
-echo $cache_file
-# Check if the cache file exists for the current monitor output
-if [ -f "$cache_file" ]; then
-    # Get the wallpaper path from the cache file
-    wallpaper_path=$(grep -v 'Lanczos3' "$cache_file" | head -n 1)
-    echo $wallpaper_path
-    # symlink the wallpaper to the location Rofi can access
-    if ln -sf "$wallpaper_path" "/home/mao/.config/rofi/change_wallpapper/.current_wallpaper"; then
-        ln_success=true  # Set the flag to true upon successful execution
-    fi
-    # copy the wallpaper for wallpaper effects
-	#cp -r "$wallpaper_path" "/home/mao/projects/dotfiles/sddm/themes/mao-theme/.current_wallpaper"
+# Asegurar que el archivo con la ruta del wallpaper exista
+if [ ! -f "$WALLPAPER_PATH_FILE" ]; then
+    log "⚠️ No se encontró $WALLPAPER_PATH_FILE"
+    exit 1
 fi
 
-# Check the flag before executing further commands
-if [ "$ln_success" = true ]; then
-    # execute wallust
-	echo 'about to execute wallust'
-    # execute wallust skipping tty and terminal changes
-    wallust run "$wallpaper_path" -s
+# Leer ruta actual del wallpaper
+wallpaper_path=$(cat "$WALLPAPER_PATH_FILE")
+
+# Verificar que no esté vacío
+if [ -z "$wallpaper_path" ]; then
+    log "⚠️ La ruta del wallpaper está vacía."
+    exit 1
+fi
+
+# Verificar que el archivo exista
+if [ ! -f "$wallpaper_path" ]; then
+    log "⚠️ El archivo del wallpaper no existe: $wallpaper_path"
+    exit 1
+fi
+
+# ─────────────────────────────────────────────────────────────
+# 🔗 Crear enlace simbólico para Rofi
+# ─────────────────────────────────────────────────────────────
+
+mkdir -p "$ROFI_DIR"
+
+ln -sf "$wallpaper_path" "$WALLPAPER_LINK"
+log "📎 Enlace simbólico actualizado:"
+log "$WALLPAPER_LINK → $wallpaper_path"
+
+# ─────────────────────────────────────────────────────────────
+# 🎨 Ejecutar Wallust (sin cambiar TTY o terminal)
+# ─────────────────────────────────────────────────────────────
+
+log "🎨 Generando paleta con Wallust..."
+wallust run "$wallpaper_path" -s
+
+# ─────────────────────────────────────────────────────────────
+# 🔁 Reiniciar Waybar para aplicar colores nuevos
+# ─────────────────────────────────────────────────────────────
+
+if pgrep -x "waybar" >/dev/null; then
+    log "🔄 Reiniciando Waybar..."
     killall waybar && waybar &
-
+else
+    log "ℹ️ Waybar no está en ejecución."
 fi
+
+log "✅ Paleta de colores actualizada correctamente."
