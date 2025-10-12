@@ -268,11 +268,11 @@
     "cava": {
         "cava_config": "/home/mao/projects/dotfiles/cava/config",
         "framerate": 30,
-        "autosens": 0,
-        "sensitivity": 6,
+        "autosens": 1,  // HDMI port 0
+        "sensitivity": 1, //HDMI port 6
         "bars": 14,
-        "lower_cutoff_freq": 100,
-        "higher_cutoff_freq": 10000,
+        //"lower_cutoff_freq": 100, // HDMI port
+        //"higher_cutoff_freq": 10000, // HDMI port
         "sleep_timer": 5, 
         "hide_on_silence": true,
         //"format_silent": "quiet", // 	Widget's text after sleep_timer elapsed (hide_on_silence has to be false)
