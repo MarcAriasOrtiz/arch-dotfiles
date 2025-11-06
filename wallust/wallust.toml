@@ -33,8 +33,8 @@ palette = "dark16"
 threshold = 11
 
 [templates]
-cava.template = 'colors-cava'
-cava.target = '~/projects/dotfiles/cava/config'
+# cava.template = 'colors-cava'
+# cava.target = '~/projects/dotfiles/cava/config'
 
 sddm.template = "colors-sddm.conf"
 sddm.target = "/home/mao/projects/dotfiles/sddm/themes/mao-theme/wallust/colors-sddm.conf"
