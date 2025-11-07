@@ -8,3 +8,4 @@ rofi/wallust/colors-rofi.rasi
 sddm/themes/mao-theme/.current_wallpaper.jpg
 sddm/themes/mao-theme/wallust/colors-sddm.conf
 waybar/wallust/colors-waybar.css
+test_cava.sh
