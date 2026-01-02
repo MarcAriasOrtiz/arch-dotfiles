@@ -133,3 +133,8 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 # ALIAS
 alias ls="eza --icons=auto"
 alias vim="nvim"
+alias brave='brave --quiet --ozone-platform=wayland --disable-gpu-driver-bug-workarounds > /dev/null 2>&1'
+# Add JBang to environment
+alias j!=jbang
+export PATH="$HOME/.jbang/bin:$HOME/.jbang/currentjdk/bin:$PATH"
+export JAVA_HOME=$HOME/.jbang/currentjdk
