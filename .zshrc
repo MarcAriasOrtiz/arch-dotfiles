@@ -129,6 +129,11 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 . "$HOME/.local/bin/env"
 
+# Load SSH Agents automatically
+if [[ -z "$SSH_AUTH_SOCK" ]]; then
+    eval "$(ssh-agent -s)" > /dev/null
+    ssh-add ~/.ssh/id_ed25519 ~/.ssh/id_marcortiz 2>/dev/null
+fi
 
 # ALIAS
 alias ls="eza --icons=auto"
