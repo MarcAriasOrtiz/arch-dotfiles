@@ -97,16 +97,16 @@ apply_image_wallpaper() {
 
   kill_wallpaper_for_image
 
-  # Iniciar swww si no está corriendo
-  if ! pgrep -x "swww-daemon" >/dev/null; then
-    log "🚀 Iniciando swww-daemon..."
-    swww-daemon --format xrgb &
+  # Iniciar awww si no está corriendo
+  if ! pgrep -x "awww-daemon" >/dev/null; then
+    log "🚀 Iniciando awww-daemon..."
+    awww-daemon &
     sleep 1
   fi
 
   # Aplicar imagen con transición
   log "🖼️ Aplicando wallpaper en $focused_monitor..."
-  swww img -o "$focused_monitor" "$image_path" $SWWW_PARAMS
+  awww img -o "$focused_monitor" "$image_path" $SWWW_PARAMS
 
   # Guardar ruta del wallpaper actual
   echo "$image_path" > "$wallpaper_path_file"
