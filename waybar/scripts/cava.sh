@@ -1,4 +1,7 @@
 #!/bin/bash
+
+exec 2>/dev/null
+
 # Convierte salida numérica de cava (0–7) a iconos unicode
 # Oculta después de 'x' segundos sin audio $HIDE_DELAY
 
@@ -71,3 +74,4 @@ while read -r line; do
   fi
   
 done < "$fifo"  # El bucle lee desde el FIFO (salida de cava)
+

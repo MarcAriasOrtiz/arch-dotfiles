@@ -9,7 +9,7 @@
 
 # 📂 Directorios y configuraciones
 terminal="kitty"
-wallDIR="$HOME/projects/wallpappers/pics"
+wallDIR="$HOME/wallpaper-downloader/pics"
 SCRIPTSDIR="$HOME/.config/hypr/scripts"
 ROFI_DIR="$HOME/.config/rofi/change_wallpapper"
 rofi_theme="$ROFI_DIR/config-wallpapper.rasi"
@@ -118,7 +118,7 @@ apply_image_wallpaper() {
   # Actualizar fondos para otros elementos visuales
   sleep 2
   magick "$current_wallpaper_link" -blur 0x5 "$HOME/.config/rofi/select_program/.current_wallpapper"
-  magick "$current_wallpaper_link" "$HOME/projects/dotfiles/sddm/themes/mao-theme/.current_wallpaper.jpg"
+  magick "$current_wallpaper_link" "$HOME/arch-dotfiles/sddm/themes/mao-theme/.current_wallpaper.jpg"
 
   log "✅ Wallpaper aplicado y colores actualizados."
 }
