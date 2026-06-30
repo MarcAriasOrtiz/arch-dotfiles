@@ -249,36 +249,10 @@
     "custom/cava": {
         "format": "{}",
         "exec": "~/.config/waybar/scripts/cava.sh",
-        "interval": 0.05,
         "return-type": "plain",
         "escape": true
     },
-    //"cava": {
-    //    //"cava_config": "/home/mao/projects/dotfiles/cava/config",
-    //    "framerate": 39,
-    //    "autosens": 1,  // HDMI port 0
-    //    "sensitivity": 1, //HDMI port 6
-    //    "bars": 14,
-    //    //"lower_cutoff_freq": 100, // HDMI port
-    //    //"higher_cutoff_freq": 10000, // HDMI port
-    //    "sleep_timer": 5, 
-    //    "hide_on_silence": true,
-    //    //"format_silent": "quiet", // 	Widget's text after sleep_timer elapsed (hide_on_silence has to be false)
-    //    //"method": "pulse",
-    //    //"source": "auto",
-    //    //"source": "alsa_output.pci-0000_00_03.0.hdmi-stereo.monitor",
-    //    "stereo": true,
-    //    "reverse": false,
-    //    "bar_delimiter": 0,
-    //    "monstercat": false,
-    //    "waves": false,
-    //    "noise_reduction": 0.8,
-    //    "input_delay": 2,
-    //    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
-    //    "actions": {
-    //               "on-click-right": "mode"
-    //               }
-    //},
+
     // Spotify
     "custom/spotify": {
         "exec": "~/.config/waybar/scripts/mediaplayer.py --player spotify",

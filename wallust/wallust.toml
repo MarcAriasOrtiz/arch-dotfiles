@@ -34,19 +34,19 @@ threshold = 11
 
 [templates]
 # cava.template = 'colors-cava'
-# cava.target = '~/projects/dotfiles/cava/config'
+# cava.target = '~/arch-dotfiles/cava/config'
 
 sddm.template = "colors-sddm.conf"
-sddm.target = "/home/mao/projects/dotfiles/sddm/themes/mao-theme/wallust/colors-sddm.conf"
+sddm.target = "/home/mao/arch-dotfiles/sddm/themes/mao-theme/wallust/colors-sddm.conf"
 
 hypr.template = 'colors-hyprland.conf'
-hypr.target = '~/projects/dotfiles/hypr/wallust/wallust-hyprland.conf'
+hypr.target = '~/arch-dotfiles/hypr/wallust/wallust-hyprland.conf'
 
 rofi.template = 'colors-rofi.rasi'
-rofi.target = '/home/mao/projects/dotfiles/rofi/wallust/colors-rofi.rasi'
+rofi.target = '/home/mao/arch-dotfiles/rofi/wallust/colors-rofi.rasi'
 
 waybar.template = 'colors-waybar.css'
-waybar.target = '/home/mao/projects/dotfiles/waybar/wallust/colors-waybar.css'
+waybar.target = '/home/mao/arch-dotfiles/waybar/wallust/colors-waybar.css'
 
 #kitty.template = 'colors-kitty.conf'
 #kitty.target = '~/.config/kitty/kitty-themes/01-Wallust.conf'
