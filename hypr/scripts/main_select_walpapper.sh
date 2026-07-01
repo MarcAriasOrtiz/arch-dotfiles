@@ -120,6 +120,9 @@ apply_image_wallpaper() {
   magick "$current_wallpaper_link" -blur 0x5 "$HOME/.config/rofi/select_program/.current_wallpapper"
   magick "$current_wallpaper_link" "$HOME/arch-dotfiles/sddm/themes/mao-theme/.current_wallpaper.jpg"
 
+  # Ejecutar script para cambiar la configuracion de sddm con el nuevo fondo y paleta de colores
+  sudo "$SCRIPTSDIR/apply_theme.bash"
+
   log "✅ Wallpaper aplicado y colores actualizados."
 }
 
