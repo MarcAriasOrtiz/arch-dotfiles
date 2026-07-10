@@ -15,6 +15,7 @@ ROFI_DIR="$HOME/.config/rofi/change_wallpapper"
 rofi_theme="$ROFI_DIR/config-wallpapper.rasi"
 current_wallpaper_link="$ROFI_DIR/.current_wallpaper"
 wallpaper_path_file="$SCRIPTSDIR/.current_wallpaper_path"
+grub_wallpaper_path_file="$HOME/arch-dotfiles/grub/themes/mao-theme/background.png"
 
 # 🌀 Configuración de transición (swww)
 FPS=60
@@ -111,6 +112,7 @@ apply_image_wallpaper() {
   # Guardar ruta del wallpaper actual
   echo "$image_path" > "$wallpaper_path_file"
   ln -sf "$image_path" "$current_wallpaper_link"
+  ln -sf "$image_path" "$grub_wallpaper_path_file"
 
   # Ejecutar script de colores
   "$SCRIPTSDIR/wallust_colors.sh" &
